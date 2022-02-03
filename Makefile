@@ -6,7 +6,7 @@
 #    By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/28 23:07:58 by lkrebs-l          #+#    #+#              #
-#    Updated: 2022/02/03 06:08:12 by lkrebs-l         ###   ########.fr        #
+#    Updated: 2022/02/03 07:33:02 by lkrebs-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = pipex
 
 CC = gcc
 
-SRC = src/pipex.c src/free_all.c
+SRC = src/pipex.c src/free_all.c src/files.c src/main.c
 
 CFLAGS = -g3 -Wextra -Werror -Wall
 
