@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 04:38:53 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/02/03 04:40:45 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/02/03 06:19:40 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 int	main(int argc, char *argv[], char *envp)
 {
-	if (argc != 5)
-		return(EXIT_FAILURE);
-	else
-		pipex(argc, argv, envp);
-	return (EXIT_SUCCESS);
+	return (pipex(argc, argv, envp));
 }
