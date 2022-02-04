@@ -6,13 +6,13 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 04:38:53 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/02/03 06:19:40 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/02/03 18:00:12 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int	main(int argc, char *argv[], char *envp)
+int	main(int argc, char *argv[], char **envp)
 {
 	return (pipex(argc, argv, envp));
 }
