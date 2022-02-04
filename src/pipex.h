@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 23:08:11 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/02/04 21:43:03 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/02/04 21:59:44 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ int		open_files(t_data *data);
 void	close_files(t_data *data);
 int		exec_cmd(t_data *data, int argc, char **envp);
 void	init_values(t_data *data, int argc, char *argv[], char **envp);
-void	dup42(t_data *data, int fd);
-/* void	handle_error(int signal, t_data *data); */
+void	dup42(t_data *data, int fd, int std);
+void	msg_error(t_data *data);
 #endif
