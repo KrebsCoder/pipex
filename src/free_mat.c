@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_all.c                                         :+:      :+:    :+:   */
+/*   free_mat.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 05:51:28 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/02/08 01:38:04 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/02/08 01:47:23 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	free_mat(t_data data)
+void	free_mat(char **mat)
 {
 	int	i;
 
 	i = 0;
-	while (data.bin[i])
+	while (mat[i])
 	{
-		free(data.bin[i]);
+		free(mat[i]);
 		i++;
 	}
-	free(data.bin);
+	free(mat);
+	mat = NULL;
 }
