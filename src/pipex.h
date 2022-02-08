@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 23:08:11 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/02/08 01:51:24 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/02/08 01:52:41 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ typedef struct s_data
 int		pipex(int argc, char *argv[], char **envp);
 int		open_files(t_data *data);
 void	close_files(t_data *data);
-int		exec_cmd(t_data *data, char *argv[]);
+char	exec_cmd(t_data *data, char *argv[]);
 int		pipes(t_data *data, char **envp);
 void	init_values(t_data *data, int argc, char *argv[], char **envp);
 void	dup42(t_data *data, int fd, int std);
