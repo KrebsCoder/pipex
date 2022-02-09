@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/01/28 23:07:58 by lkrebs-l          #+#    #+#              #
-#    Updated: 2022/02/03 07:33:02 by lkrebs-l         ###   ########.fr        #
+#    Created: 2022/02/09 20:22:27 by lkrebs-l          #+#    #+#              #
+#    Updated: 2022/02/09 20:27:48 by lkrebs-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,25 @@ NAME = pipex
 
 CC = gcc
 
-SRC = src/pipex.c src/free_all.c src/files.c src/main.c
+SRC =	src/dup42.c \
+		src/error.c \
+		src/exec_cmd.c \
+		src/files.c \
+		src/free_all.c \
+		src/init_values.c \
+		src/main.c \
+		src/parse_env.c \
+		src/pipes.c \
+		src/pipex.c \
+		src/libft/ft_calloc.c \
+		src/libft/ft_split.c \
+		src/libft/ft_strchr.c \
+		src/libft/ft_strdup.c \
+		src/libft/ft_strjoin.c \
+		src/libft/ft_strlen.c \
+		src/libft/ft_strncmp.c \
+		src/libft/ft_strnstr.c \
+		src/libft/ft_substr.c
 
 CFLAGS = -g3 -Wextra -Werror -Wall
 
