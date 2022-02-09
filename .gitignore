@@ -2,3 +2,5 @@ src/a.out
 LICENSE
 .vscode
 example.c
+src/*.o
+src/libft/*.o
