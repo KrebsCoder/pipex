@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 07:06:38 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/02/05 00:27:20 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/02/08 03:38:25 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ int	open_files(t_data *data)
 
 void	close_files(t_data *data)
 {
-	close(data->fd[0]);
-	close(data->fd[1]);
 	close(data->files.in_fd);
 	close(data->files.out_fd);
 }
