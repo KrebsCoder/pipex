@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 23:08:11 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/02/08 01:52:41 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/02/09 20:32:56 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_file
 
 typedef struct s_data
 {
+	int		exit_status;
 	int		fd[2];
 	pid_t	pid1;
 	pid_t	pid2;
@@ -46,13 +47,14 @@ typedef struct s_data
 int		pipex(int argc, char *argv[], char **envp);
 int		open_files(t_data *data);
 void	close_files(t_data *data);
-char	exec_cmd(t_data *data, char *argv[]);
-int		pipes(t_data *data, char **envp);
+void	exec_cmd(t_data *data, char *argv, char **envp);
+int		pipes(t_data *data, char *argv[], char **envp);
 void	init_values(t_data *data, int argc, char *argv[], char **envp);
 void	dup42(t_data *data, int fd, int std);
 void	msg_error(t_data *data);
 void	parse_env(t_data *data, char **envp);
 char	*path_bin(t_data *data);
+void	free_all(t_data *data);
 
 // ===== LIBFT FUNCTIONS ===== //
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
@@ -63,5 +65,6 @@ char	**ft_split(char const *s, char c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *src);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif
