@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 04:22:48 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/02/04 22:02:30 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/02/09 20:50:22 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	dup42(t_data *data, int fd, int std)
 {
-	int check;
+	int	check;
+
 	check = dup2(fd, std);
 	close(fd);
 	if (check == -1)
