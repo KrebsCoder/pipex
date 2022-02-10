@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 23:08:11 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/02/09 20:32:56 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/02/10 01:48:41 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_file
 	int		out_fd;
 	char	*infile;
 	char	*outfile;
-} t_file;
+}	t_file;
 
 typedef struct s_data
 {
@@ -41,7 +41,7 @@ typedef struct s_data
 	char	**bin;
 	char	*path;
 	int		cmd_qnt;
-	t_file files;
+	t_file	files;
 }	t_data;
 
 int		pipex(int argc, char *argv[], char **envp);
@@ -55,6 +55,8 @@ void	msg_error(t_data *data);
 void	parse_env(t_data *data, char **envp);
 char	*path_bin(t_data *data);
 void	free_all(t_data *data);
+int		cmd_infile(t_data *data, char *argv[], char **envp);
+int		cmd_outfile(t_data *data, char *argv[], char **envp);
 
 // ===== LIBFT FUNCTIONS ===== //
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
