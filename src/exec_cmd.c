@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 02:14:32 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/02/09 20:46:33 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/02/10 01:21:41 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,15 @@ void	exec_cmd(t_data *data, char *argv, char **envp)
 	parse_args(data, argv);
 	cmd = path_bin(data);
 	if (!cmd)
+	{
+		errno = 22;
+		perror(data->cmd[0]);
 		free_all(data);
+		exit(127);
+	}
 	if (execve(cmd, data->cmd, envp) == -1)
+	{
 		free_all(data);
-	execve(cmd, data->cmd, envp);
+		exit(1);
+	}
 }
