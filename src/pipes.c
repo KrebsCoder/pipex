@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 19:18:40 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/02/10 01:26:27 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/02/10 01:27:10 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ int	pipes(t_data *data, char *argv[], char **envp)
 	if (pipe(data->fd) == -1)
 	{
 		msg_error(data);
-		return (EXIT_FAILURE);
+		return (WEXITSTATUS(data->exit_status));
 	}
 	if (cmd_infile(data, argv, envp) == 1)
-		return (EXIT_FAILURE);
+		return (WEXITSTATUS(data->exit_status));
 	waitpid(data->pid1, &data->exit_status, 0);
 	close(data->fd[1]);
 	if (cmd_outfile(data, argv, envp) == 1)
-		return (EXIT_FAILURE);
+		return (WEXITSTATUS(data->exit_status));
 	waitpid(data->pid2, &data->exit_status, 0);
 	return (WEXITSTATUS(data->exit_status));
 }
