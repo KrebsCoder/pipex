@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 23:08:11 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/02/14 00:41:46 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/02/14 00:46:53 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char	*path_bin(t_data *data);
 void	free_all(t_data *data);
 int		cmd_infile(t_data *data, char *argv[], char **envp);
 int		cmd_outfile(t_data *data, char *argv[], char **envp);
-int		treat_space(char *argv);
+int		treat_space(t_data *data, char *argv);
 
 // ===== LIBFT FUNCTIONS ===== //
 
