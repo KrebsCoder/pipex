@@ -6,7 +6,7 @@
 #    By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 20:22:27 by lkrebs-l          #+#    #+#              #
-#    Updated: 2022/02/09 20:27:48 by lkrebs-l         ###   ########.fr        #
+#    Updated: 2022/02/14 00:41:36 by lkrebs-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ SRC =	src/dup42.c \
 		src/libft/ft_strlen.c \
 		src/libft/ft_strncmp.c \
 		src/libft/ft_strnstr.c \
+		src/libft/ft_strrchr.c \
 		src/libft/ft_substr.c
 
 CFLAGS = -g3 -Wextra -Werror -Wall
@@ -55,8 +56,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean $(NAME)
-
-norm:
-	norminette src
 
 .PHONY: all clean fclean re

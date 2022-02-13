@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 23:08:11 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/02/10 01:48:41 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/02/14 00:41:46 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # include <sys/wait.h>
 # include <errno.h>
 # include <stdio.h>
+# define SPACE 32
+# define QUOTE 96
 
 typedef struct s_file
 {
@@ -41,6 +43,7 @@ typedef struct s_data
 	char	**bin;
 	char	*path;
 	int		cmd_qnt;
+	int		mark;
 	t_file	files;
 }	t_data;
 
@@ -57,12 +60,15 @@ char	*path_bin(t_data *data);
 void	free_all(t_data *data);
 int		cmd_infile(t_data *data, char *argv[], char **envp);
 int		cmd_outfile(t_data *data, char *argv[], char **envp);
+int		treat_space(char *argv);
 
 // ===== LIBFT FUNCTIONS ===== //
+
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_strncmp(const char *s1, const char *s2, unsigned int n);
 size_t	ft_strlen(const char *string);
 char	*ft_strchr(const char *string, int c);
+char	*ft_strrchr(const char *string, int c);
 char	**ft_split(char const *s, char c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 void	*ft_calloc(size_t nmemb, size_t size);
