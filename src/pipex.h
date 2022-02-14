@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 23:08:11 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/02/14 00:46:53 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/02/14 01:35:54 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include <errno.h>
 # include <stdio.h>
 # define SPACE 32
-# define QUOTE 96
+# define SINGLE_QUOTE 39
 
 typedef struct s_file
 {
