@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 00:20:15 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/02/16 03:05:45 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/02/16 03:26:47 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,8 @@ void	treat_space(t_data *data, char *argv)
 		pos1++;
 	}
 	data->cmd = ft_split(cmd_dup, SPACE);
+	free(data->cmd[i]);
 	data->cmd[i] = ft_strdup(test);
 	free(cmd_dup);
 	free(test);
-	cmd_dup = NULL;
-	test = NULL;
 }
