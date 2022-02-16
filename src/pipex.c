@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 04:37:09 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/02/10 01:49:00 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/02/16 04:20:24 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	pipex(int argc, char *argv[], char **envp)
 	else if (argc == 5)
 	{
 		init_values(&data, argc, argv, envp);
-		open_files(&data);
+		if (open_files(&data) == 1)
+			return (EXIT_FAILURE);
 		return (pipes(&data, argv, envp));
 	}
 	return (EXIT_SUCCESS);
