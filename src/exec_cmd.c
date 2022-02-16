@@ -6,7 +6,7 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 02:14:32 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2022/02/14 01:44:35 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2022/02/16 03:16:25 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,39 +39,26 @@ char	*path_bin(t_data *data)
 
 void	parse_args(t_data *data, char *argv)
 {
+	int	i;
+	int	j;
+
+	j = 0;
+	i = 0;
 	if (ft_strchr(argv, SINGLE_QUOTE))
-		treat_space(data, argv);
-	else
-		data->cmd = ft_split(argv, SPACE);
-}
-
-int	treat_space(t_data *data, char *argv)
-{
-	char	*pos1;
-	char	*pos2;
-	char	caracter;
-	int		i;
-
-	pos1 = ft_strchr(argv, SINGLE_QUOTE);
-	caracter = pos1[1];
-	pos2 = ft_strrchr(argv, SINGLE_QUOTE);
-	if (pos1 == pos2)
 	{
-		data->cmd = ft_split(argv, SPACE);
-		return (EXIT_SUCCESS);
-	}
-	else
-	{
-		i = 0;
-		while (pos1[i])
+		while (argv[j])
 		{
-			pos1[i] = ';';
-			i++;
+			if (argv[j] == SINGLE_QUOTE)
+				i++;
+			j++;
 		}
-		data->cmd = ft_split(argv, SPACE);
-		data->cmd[2][0] = caracter;
+		if (i != 1)
+			treat_space(data, argv);
+		else
+			data->cmd = ft_split(argv, SPACE);
 	}
-	return (EXIT_SUCCESS);
+	else
+		data->cmd = ft_split(argv, SPACE);
 }
 
 void	exec_cmd(t_data *data, char *argv, char **envp)
