@@ -6,7 +6,7 @@
 #    By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/09 20:22:27 by lkrebs-l          #+#    #+#              #
-#    Updated: 2022/02/14 00:41:36 by lkrebs-l         ###   ########.fr        #
+#    Updated: 2022/02/16 00:20:01 by lkrebs-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRC =	src/dup42.c \
 		src/parse_env.c \
 		src/pipes.c \
 		src/pipex.c \
+		src/treat_space.c \
 		src/libft/ft_calloc.c \
 		src/libft/ft_split.c \
 		src/libft/ft_strchr.c \
